@@ -1,7 +1,5 @@
 package org.fipro.eclipse.tutorial.inverter.part;
 
-import javax.annotation.PostConstruct;
-
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
@@ -14,6 +12,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.fipro.eclipse.tutorial.inverter.helper.StringInverter;
+
+import jakarta.annotation.PostConstruct;
 
 public class InverterPart {
 	

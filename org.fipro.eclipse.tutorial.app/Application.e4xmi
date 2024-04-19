@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_tv09MKYzEeSD7pZHnwEr_g" elementId="org.eclipse.e4.ide.application" bindingContexts="_tv09OaYzEeSD7pZHnwEr_g">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_tv09MaYzEeSD7pZHnwEr_g" label="E4 RCP Tutorial App" width="500" height="400">
-    <children xsi:type="basic:PartSashContainer" xmi:id="_eJLHQKbJEeSD7pZHnwEr_g" elementId="org.fipro.eclipse.tutorial.app.partsashcontainer.0">
-      <children xsi:type="basic:Part" xmi:id="_hJgEsKbJEeSD7pZHnwEr_g" elementId="org.fipro.eclipse.tutorial.app.part.0" contributionURI="bundleclass://org.fipro.eclipse.tutorial.inverter/org.fipro.eclipse.tutorial.inverter.part.InverterPart"/>
-    </children>
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_tv09MaYzEeSD7pZHnwEr_g" elementId="org.eclipse.e4.window.main" label="Eclipse Cookbook Application" width="500" height="400">
+    <children xsi:type="basic:PartSashContainer" xmi:id="_eJLHQKbJEeSD7pZHnwEr_g" elementId="org.fipro.eclipse.tutorial.app.main"/>
   </children>
   <rootContext xmi:id="_tv09OaYzEeSD7pZHnwEr_g" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_tv09OqYzEeSD7pZHnwEr_g" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
