@@ -1,7 +1,7 @@
 
-# Eclipse RCP Cookbook – Basic Recipe
+# Eclipse 4 RCP Cookbook – Basic Recipe
 
-As we don’t want to start every future blog post with setting up the basics, we start with the basic recipe. In our case this means to setup the recommended project structure and explain the very basics. So the following blog post can also be seen as Getting Started with Eclipse 4 without the typical Hello World approach. Please note that despite the project structure, not every implementation detail in the basic recipe is considered to be best practice. We will add some seasoning and extend the basic recipe in further extended recipes.
+With this tutorial we start with the basic recipe. In our case this means to setup the recommended project structure and explain the very basics. It can also be seen as _Getting Started with Eclipse 4 RCP_ without the typical Hello World approach. Please note that despite the project structure, not every implementation detail in the basic recipe is considered to be best practice. We will add some seasoning and extend the basic recipe in further extended recipes.
 
 ## Cookware
 
