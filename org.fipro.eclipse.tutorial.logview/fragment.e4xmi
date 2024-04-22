@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_KxgI4ABvEe-Sga9XhUrP7g">
+  <imports xsi:type="basic:PartSashContainer" xmi:id="_Ma03IABvEe-Sga9XhUrP7g" elementId="org.fipro.eclipse.tutorial.app.main"/>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_PGfzMABvEe-Sga9XhUrP7g" featurename="children" parentElementId="org.fipro.eclipse.tutorial.app.main" positionInList="after:org.fipro.eclipse.tutorial.inverter.part.0">
+    <elements xsi:type="basic:PartStack" xmi:id="_ml410ABvEe-Sga9XhUrP7g" elementId="org.fipro.eclipse.tutorial.logview.partstack.0">
+      <children xsi:type="basic:Part" xmi:id="_t7d8QABvEe-Sga9XhUrP7g" elementId="org.fipro.eclipse.tutorial.logview.part.logview" contributionURI="bundleclass://org.fipro.eclipse.tutorial.logview/org.fipro.eclipse.tutorial.logview.part.LogViewPart" label="Log View"/>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>
