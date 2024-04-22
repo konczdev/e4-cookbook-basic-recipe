@@ -1,5 +1,7 @@
 package org.fipro.eclipse.tutorial.inverter.part;
 
+import org.eclipse.e4.core.di.extensions.Service;
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
@@ -11,11 +13,19 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.fipro.eclipse.tutorial.inverter.helper.StringInverter;
+import org.fipro.eclipse.tutorial.service.inverter.InverterService;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 
 public class InverterPart {
+	
+	@Inject
+	@Service
+	private InverterService inverter;
+	
+	@Inject
+    IEventBroker broker;
 	
 	@PostConstruct
 	public void postConstruct(Composite parent) {
@@ -42,7 +52,8 @@ public class InverterPart {
 		button.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				output.setText(StringInverter.invert(input.getText()));
+				output.setText(inverter.invert(input.getText()));
+				broker.post("TOPIC_LOGGING", "triggered via button");
 			}
 		});
 
@@ -51,7 +62,8 @@ public class InverterPart {
 			public void keyPressed(KeyEvent e) {
 				if (e.keyCode == SWT.CR
 						|| e.keyCode == SWT.KEYPAD_CR) {
-					output.setText(StringInverter.invert(input.getText()));
+					output.setText(inverter.invert(input.getText()));
+					broker.post("TOPIC_LOGGING", "triggered via field");
 				}
 			}
 		});

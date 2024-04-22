@@ -233,6 +233,7 @@ The application model can be extended by other plug-ins via _Model Fragments_. T
         <img src="new_part.png"
             style="width:600px" />
 
+        - Click _Finish_
         - Save the _fragment.e4xmi_ file
         - Create the content in the method annotated with `@PostConstruct`  
 Methods annotated with `@PostConstruct` are called after an object has been fully injected and also supports method parameter injection.

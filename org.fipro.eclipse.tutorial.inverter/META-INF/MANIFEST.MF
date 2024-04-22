@@ -8,7 +8,10 @@ Require-Bundle: org.eclipse.swt;bundle-version="3.125.0",
  org.eclipse.e4.ui.model.workbench;bundle-version="2.4.200.v20240109-1025"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Import-Package: jakarta.annotation;version="[2.1.0,3.0.0]",
- jakarta.inject;version="[2.0.0,3.0.0]"
+ jakarta.inject;version="[2.0.0,3.0.0]",
+ org.eclipse.e4.core.di.extensions;version="[0.16.0,1.0.0]",
+ org.eclipse.e4.core.services.events,
+ org.fipro.eclipse.tutorial.service.inverter
 Model-Fragment: fragment.e4xmi
 Automatic-Module-Name: org.fipro.eclipse.tutorial.inverter
 Bundle-ActivationPolicy: lazy

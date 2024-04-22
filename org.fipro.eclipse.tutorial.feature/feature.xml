@@ -24,4 +24,12 @@
          id="org.fipro.eclipse.tutorial.inverter"
          version="0.0.0"/>
 
+   <plugin
+         id="org.fipro.eclipse.tutorial.service.inverter"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.fipro.eclipse.tutorial.logview"
+         version="0.0.0"/>
+
 </feature>
