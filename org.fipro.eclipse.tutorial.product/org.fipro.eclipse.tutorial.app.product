@@ -37,6 +37,7 @@
       <feature id="org.eclipse.ecf.core.feature" installMode="root"/>
       <feature id="org.eclipse.ecf.filetransfer.feature" installMode="root"/>
       <feature id="org.eclipse.ecf.filetransfer.httpclientjava.feature" installMode="root"/>
+      <feature id="org.fipro.e4.service.preferences.feature" installMode="root"/>
    </features>
 
    <configurations>

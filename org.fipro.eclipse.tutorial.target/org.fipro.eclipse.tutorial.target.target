@@ -2,29 +2,43 @@
 <?pde?>
 <target name="E4 Cookbook Target Platform" sequenceNumber="1568034040">
 	<locations>
-		<location 
-			includeAllPlatforms="false" 
-			includeConfigurePhase="false" 
-			includeMode="planner" 
-			includeSource="true" 
-			type="InstallableUnit">
+		<location
+		  includeAllPlatforms="false" 
+		  includeConfigurePhase="false" 
+		  includeMode="planner" 
+		  includeSource="true" 
+		  type="InstallableUnit">
 
-			<unit 
-				id="org.eclipse.equinox.executable.feature.group" 
-				version="3.8.2400.v20240213-1244"/>
-			<unit 
-				id="org.eclipse.sdk.feature.group" 
-				version="4.31.0.v20240229-1022"/>
+            <unit 
+                id="org.eclipse.equinox.executable.feature.group" 
+                version="3.8.2400.v20240213-1244"/>
+            <unit 
+                id="org.eclipse.sdk.feature.group" 
+                version="4.31.0.v20240229-1022"/>
 				
-			<unit 
-				id="org.eclipse.equinox.core.feature.feature.group" 
-				version="1.15.0.v20240214-0846"/>
-			<unit 
-				id="org.eclipse.equinox.p2.core.feature.feature.group" 
-				version="1.7.100.v20240220-1431"/>
+            <unit 
+                id="org.eclipse.equinox.core.feature.feature.group" 
+                version="1.15.0.v20240214-0846"/>
+            <unit 
+                id="org.eclipse.equinox.p2.core.feature.feature.group" 
+                version="1.7.100.v20240220-1431"/>
 				
-			<repository 
-				location="https://download.eclipse.org/releases/2024-03"/>
+            <repository 
+                location="https://download.eclipse.org/releases/2024-03"/>
 		</location>
+    	<location 
+    	   includeAllPlatforms="false" 
+    	   includeConfigurePhase="false" 
+    	   includeMode="planner" 
+    	   includeSource="true" 
+    	   type="InstallableUnit">
+            
+        	<unit 
+        	   id="org.fipro.e4.service.preferences.feature.feature.group" 
+        	   version="0.4.0.202405151311"/>
+        	
+        	<repository 
+        	   location="https://github.com/fipro78/e4-preferences/raw/master/releases/0.4.0"/>
+    	</location>
 	</locations>
 </target>

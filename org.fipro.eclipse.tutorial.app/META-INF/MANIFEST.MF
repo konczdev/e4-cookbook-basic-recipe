@@ -15,8 +15,14 @@ Require-Bundle: org.eclipse.swt,
  org.eclipse.equinox.p2.core;bundle-version="2.11.0",
  org.eclipse.equinox.p2.engine;bundle-version="2.10.0",
  org.eclipse.equinox.p2.metadata.repository;bundle-version="1.5.300",
- org.eclipse.equinox.p2.operations;bundle-version="2.7.300"
-Automatic-Module-Name: org.fipro.eclipse.tutorial.app
+ org.eclipse.equinox.p2.operations;bundle-version="2.7.300",
+ org.eclipse.e4.core.services
 Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: org.fipro.eclipse.tutorial.app
+Service-Component: OSGI-INF/org.fipro.eclipse.tutorial.app.preferences.ApplicationPreferencesContribution.xml
 Import-Package: jakarta.annotation;version="[2.1.0,3.0.0)",
- jakarta.inject;version="[2.0.0,3.0.0)"
+ jakarta.inject;version="[2.0.0,3.0.0)",
+ org.eclipse.e4.core.di.extensions;version="[0.16.0,1.0.0]",
+ org.fipro.e4.service.preferences;version="[0.4.0,1.0.0]",
+ org.osgi.service.event;version="[1.4.0,2.0.0]"
+Bundle-ActivationPolicy: lazy

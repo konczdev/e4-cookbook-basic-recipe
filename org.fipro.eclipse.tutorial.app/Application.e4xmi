@@ -6,6 +6,8 @@
       <children xsi:type="menu:Menu" xmi:id="_fvhG8AYtEe-e_PdO_TMKWw" elementId="org.eclipse.ui.file.menu" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_unDi8AYtEe-e_PdO_TMKWw" elementId="org.fipro.eclipse.tutorial.app.handledmenuitem.update" label="Update" command="_X0dKUAYsEe-e_PdO_TMKWw"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_hXTYUAbWEe-v1Ix6_K-oww" elementId="org.fipro.eclipse.tutorial.app.handledmenuitem.updateurl" label="Update URL" command="_W9qV4AbUEe-v1Ix6_K-oww"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_95lV8AbqEe-v1Ix6_K-oww" elementId="org.fipro.eclipse.tutorial.app.handledmenuitem.preferences" label="Preferences" command="_i_nfUAbpEe-v1Ix6_K-oww"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_YhQVgBOLEe-tSomdK_0QkQ" elementId="org.fipro.eclipse.tutorial.app.handledmenuitem.restart" label="Restart" command="_-iJvMBOKEe-tSomdK_0QkQ"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_eU4isAYyEe-e_PdO_TMKWw" elementId="org.fipro.eclipse.tutorial.app.handledmenuitem.label" label="Exit" command="_6y6fAAYxEe-e_PdO_TMKWw"/>
       </children>
     </mainMenu>
@@ -13,6 +15,8 @@
   <handlers xmi:id="_jSGSUAYsEe-e_PdO_TMKWw" elementId="org.fipro.eclipse.tutorial.app.handler.update" contributionURI="bundleclass://org.fipro.eclipse.tutorial.app/org.fipro.eclipse.tutorial.app.handler.UpdateHandler" command="_X0dKUAYsEe-e_PdO_TMKWw"/>
   <handlers xmi:id="_ao54kAbUEe-v1Ix6_K-oww" elementId="org.fipro.eclipse.tutorial.app.handler.updateurl" contributionURI="bundleclass://org.fipro.eclipse.tutorial.app/org.fipro.eclipse.tutorial.app.handler.UpdateUrlHandler" command="_W9qV4AbUEe-v1Ix6_K-oww"/>
   <handlers xmi:id="_G4H9UAYyEe-e_PdO_TMKWw" elementId="org.fipro.eclipse.tutorial.app.handler.exit" contributionURI="bundleclass://org.fipro.eclipse.tutorial.app/org.fipro.eclipse.tutorial.app.handler.ExitHandler" command="_6y6fAAYxEe-e_PdO_TMKWw"/>
+  <handlers xmi:id="_k5t0gAbpEe-v1Ix6_K-oww" elementId="org.fipro.eclipse.tutorial.app.handler.preferences" contributionURI="bundleclass://org.fipro.eclipse.tutorial.app/org.fipro.eclipse.tutorial.app.handler.PreferencesHandler" command="_i_nfUAbpEe-v1Ix6_K-oww"/>
+  <handlers xmi:id="_HRs5QBOLEe-tSomdK_0QkQ" elementId="org.fipro.eclipse.tutorial.app.handler.restart" contributionURI="bundleclass://org.fipro.eclipse.tutorial.app/org.fipro.eclipse.tutorial.app.handler.RestartHandler" command="_-iJvMBOKEe-tSomdK_0QkQ"/>
   <rootContext xmi:id="_tv09OaYzEeSD7pZHnwEr_g" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_tv09OqYzEeSD7pZHnwEr_g" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_tv09O6YzEeSD7pZHnwEr_g" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
@@ -20,6 +24,8 @@
   <commands xmi:id="_X0dKUAYsEe-e_PdO_TMKWw" elementId="org.fipro.eclipse.tutorial.app.command.update" commandName="Update"/>
   <commands xmi:id="_W9qV4AbUEe-v1Ix6_K-oww" elementId="org.fipro.eclipse.tutorial.app.command.updateurl" commandName="Update URL"/>
   <commands xmi:id="_6y6fAAYxEe-e_PdO_TMKWw" elementId="org.fipro.eclipse.tutorial.app.command.exit" commandName="Exit"/>
+  <commands xmi:id="_i_nfUAbpEe-v1Ix6_K-oww" elementId="org.fipro.eclipse.tutorial.app.command.preferences" commandName="Preferences"/>
+  <commands xmi:id="_-iJvMBOKEe-tSomdK_0QkQ" elementId="org.fipro.eclipse.tutorial.app.command.restart" commandName="Restart"/>
   <addons xmi:id="_tv09MqYzEeSD7pZHnwEr_g" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_tv09M6YzEeSD7pZHnwEr_g" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_tv09NKYzEeSD7pZHnwEr_g" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -27,4 +33,5 @@
   <addons xmi:id="_tv09NqYzEeSD7pZHnwEr_g" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_tv09N6YzEeSD7pZHnwEr_g" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
   <addons xmi:id="_tv09OKYzEeSD7pZHnwEr_g" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_wd5DsBNdEe-g-9HGI5arFw" elementId="org.fipro.eclipse.tutorial.app.addon.app_title" contributionURI="bundleclass://org.fipro.eclipse.tutorial.app/org.fipro.eclipse.tutorial.app.addon.AppTitleAddon"/>
 </application:Application>

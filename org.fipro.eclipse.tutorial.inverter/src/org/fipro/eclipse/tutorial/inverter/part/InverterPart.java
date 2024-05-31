@@ -1,5 +1,7 @@
 package org.fipro.eclipse.tutorial.inverter.part;
 
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.core.di.extensions.Service;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.jface.layout.GridDataFactory;
@@ -8,9 +10,11 @@ import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.fipro.eclipse.tutorial.service.inverter.InverterService;
@@ -27,6 +31,11 @@ public class InverterPart {
 	@Inject
     IEventBroker broker;
 	
+	Text input;
+	Text output;
+	
+	Color textColor = Display.getDefault().getSystemColor(SWT.COLOR_BLACK);
+	
 	@PostConstruct
 	public void postConstruct(Composite parent) {
 		parent.setLayout(new GridLayout(3, true));
@@ -35,7 +44,8 @@ public class InverterPart {
 		inputLabel.setText("String to revert:");
 		GridDataFactory.fillDefaults().applyTo(inputLabel);
 		
-		final Text input = new Text(parent, SWT.BORDER);
+		input = new Text(parent, SWT.BORDER);
+		input.setForeground(textColor);
 		GridDataFactory.fillDefaults().grab(true, false).applyTo(input);
 		
 		Button button = new Button(parent, SWT.PUSH);
@@ -46,7 +56,8 @@ public class InverterPart {
 		outputLabel.setText("Inverted String:");
 		GridDataFactory.fillDefaults().applyTo(outputLabel);
 		
-		final Text output = new Text(parent, SWT.READ_ONLY | SWT.WRAP);
+		output = new Text(parent, SWT.READ_ONLY | SWT.WRAP);
+		output.setForeground(textColor);
 		GridDataFactory.fillDefaults().grab(true, true).span(2, 1).applyTo(output);
 		
 		button.addSelectionListener(new SelectionAdapter() {
@@ -67,5 +78,23 @@ public class InverterPart {
 				}
 			}
 		});
+	}
+
+	@Inject
+	@Optional
+	public void setTextColor(
+	        @Preference(nodePath = "org.fipro.eclipse.tutorial.inverter", value = "inverter_color") String color) {
+
+	    textColor = "blue".equals(color) 
+	            ? Display.getDefault().getSystemColor(SWT.COLOR_BLUE)
+	            : Display.getDefault().getSystemColor(SWT.COLOR_BLACK);
+
+	    if (input != null && !input.isDisposed()) {
+	        input.setForeground(textColor);
+	    }
+
+	    if (output != null && !output.isDisposed()) {
+	        output.setForeground(textColor);
+	    }
 	}
 }

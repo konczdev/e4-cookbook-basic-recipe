@@ -186,6 +186,14 @@ After a successfull build, the build result can be found _org.fipro.eclipse.tuto
   - Mac OS - _org.fipro.eclipse.tutorial.product/target/products/org.fipro.eclipse.tutorial/macosx/cocoa/x86_64/Eclipse.app/Contents/MacOS/eclipse_
   - Windows - _org.fipro.eclipse.tutorial.product/target/products/org.fipro.eclipse.tutorial/win32/win32/x86_64/eclipse.exe_
 
+Alternatively you can execute the application in any operating system with the following command from the root folder of the product:
+
+```
+java -jar plugins/org.eclipse.equinox.launcher_1.6.700.v20240213-1244.jar
+```
+
+You need of course to update the version part of the jar file if you are using a newer Eclipse version as base.
+
   __*Note:*__  
   If you get the following error on Windows
 

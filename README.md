@@ -30,3 +30,9 @@ This is the _Topping Recipe_, which means that we add the ability to update the 
 
 The original blog post can be found here: [Add p2 update functionality to an Eclipse 4 application – Eclipse RCP Cookbook](https://www.codecentric.de/wissens-hub/blog/add-p2-update-functionality-to-an-eclipse-4-application-eclipse-rcp-cookbook)  
 The updated version is contained in this repository in [Topping Recipe](/tutorials/Eclipse_RCP_Cookbook_p2.md)
+
+## Recipe #5 - The Decoration Recipe (Eclipse Preferences)
+
+This is the _Decoration Recipe_, which means that we add the functionality that a user can change the behavior or the look&feel of an application by changing preferences. This is done by using Eclipse Preferences with a custom plugin that adapts a plain E4 preferences mechanism.
+
+The tutorial is contained in this repository in [Decoration Recipe](/tutorials/Eclipse_RCP_Cookbook_Preferences.md)
