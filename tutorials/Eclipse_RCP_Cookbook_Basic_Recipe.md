@@ -77,7 +77,7 @@ The target platform specifies the plug-ins and versions that are used to build a
 - Add a new Software Site in the opened _Target Definition Editor_ 
     - Alternative A
         - Switch to the _Source_ tab and add the following snippet to the editor  
-    ```
+    ```xml
     <target name="E4 Cookbook Target Platform" sequenceNumber="1568034040">
         <locations>
             <location 
@@ -117,7 +117,7 @@ The Target Definition should look similar to the following screenshot after all 
 <img src="base_target_definition.png"
      style="width:600px" />
 
-## Step 2: Create the Application Project
+### Step 2: Create the Application Project
 
 The application project is a plug-in project that contains the application model and global application settings, like for example stylesheets.
 
@@ -152,7 +152,7 @@ The following picture shows the generated application model.
 <img src="application_model.png"
      style="width:800px" />
 
-## Step 3: Create the Plug-in Project
+### Step 3: Create the Plug-in Project
 
 The following plug-in project is used as an example for a content plug-in. It will contain a simple view where a user is able to enter a text and invert it. It anticipates topics like details on the application model, dependency injection and SWT. More details on those topics are covered in later recipes. For the basic recipe simply follow the instructions.
 
@@ -365,7 +365,7 @@ A product is used to tie features (or plug-ins) together into a product together
         - Add *–clearPersistedState* to the _Program Arguments_  
 Prevents loading a persisted workbench on application startup. This is very helpful while developing an application, as otherwise changes to the application model would not be shown on the next startup for example.
 
-### Step 6: Taste
+## Taste
 
 - Start the application from within the IDE
     - Open the Product Configuration in the _org.fipro.eclipse.tutorial.product_ project

@@ -427,7 +427,7 @@ public class InverterServiceImpl implements InverterService {
 }
 ```
 
-## Step 5: Taste
+## Taste
 
 Start the application from within the IDE
 - Open the Product Configuration in the _org.fipro.eclipse.tutorial.product_ project

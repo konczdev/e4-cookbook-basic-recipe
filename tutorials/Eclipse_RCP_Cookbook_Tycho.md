@@ -176,7 +176,7 @@ The pom.xml file should look similar to the following example:
   mvn clean verify
   ```
 
-### Step 4: Taste
+## Taste
 
 After a successfull build, the build result can be found _org.fipro.eclipse.tutorial.product/target/products_. That folder contains archive files for the configured environments, and the extracted environment specific subfolders in _org.fipro.eclipse.tutorial_.
 

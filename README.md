@@ -17,3 +17,16 @@ This is the _food combining_ recipe, that separates and decouples different part
 
 The original blog post can be found here: [OSGi declarative services and the event bus – Eclipse RCP Cookbook](https://www.codecentric.de/wissens-hub/blog/osgi-declarative-services-and-the-event-bus-eclipse-rcp-cookbook)  
 The updated version is contained in this repository in [Food Combining Recipe](/tutorials/Eclipse_RCP_Cookbook_Services_Events.md)
+
+## Recipe #3 - The Thermomix Recipe (Automated build with Maven Tycho)
+
+This is the _Thermomix_ recipe, which actually means that we add the ability to build the Eclipse application without UI integration. To explain the _Thermomix_ analogy, it means that we put everything together in one place and press a button to get the final meal at the end without interaction. :-)
+
+The tutorial is contained in this repository in [Thermomix Recipe](/tutorials/Eclipse_RCP_Cookbook_Tycho.md)
+
+## Recipe #4 - The Topping Recipe (Add p2 update functionality)
+
+This is the _Topping Recipe_, which means that we add the ability to update the Eclipse application with additional functions or bugfixes via an update mechanism. For this we use _Eclipse Equinox p2 _ and integrate it into our application.
+
+The original blog post can be found here: [Add p2 update functionality to an Eclipse 4 application – Eclipse RCP Cookbook](https://www.codecentric.de/wissens-hub/blog/add-p2-update-functionality-to-an-eclipse-4-application-eclipse-rcp-cookbook)  
+The updated version is contained in this repository in [Topping Recipe](/tutorials/Eclipse_RCP_Cookbook_p2.md)
