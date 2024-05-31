@@ -1,7 +1,7 @@
 Bundle-Name: Inverter Service
 Bundle-SymbolicName: org.fipro.eclipse.tutorial.service.inverter
 Bundle-Vendor: 
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.fipro.eclipse.tutorial.service.inverter
 -runee: JavaSE-17

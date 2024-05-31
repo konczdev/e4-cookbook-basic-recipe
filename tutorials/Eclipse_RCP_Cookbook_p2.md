@@ -126,7 +126,7 @@ To keep it simple, an update handler will be added to the application plug-in th
             - Add a _Menu_
                 - Set _ID_ to _org.eclipse.ui.file.menu_
                 - Set _Label_ to _File_
-                - Add a _Handled Menu_ Item to the _File_ menu
+                - Add a _Handled Menu Item_ to the _File_ menu
                     - Set the _Label_ to _Update_
                     - Set the _Command_ reference to the _Update_ command via _Find..._ dialog
     - Save the changes to the application model
@@ -328,8 +328,10 @@ We now create a small modification that we can install as an update to the previ
             - Set _Name_ to _ExitHandler_
             ```java
             @Execute
-            public void execute(IWorkbench workbench) {
-                workbench.close();
+            public void execute(IWorkbench workbench, Shell shell) {
+                if (MessageDialog.openConfirm(shell, "Exit", "Do you want to exit?")) {
+                    workbench.close();
+                }
             }
             ```
 - Add a _Handled Menu Item_ to the _File_ menu
@@ -355,6 +357,9 @@ As we use pomless Tycho to build the product, the versions in the generated _pom
     ```
     mvn clean verify
     ```
+
+  __*Note:*__  
+  If the build fails with the following error message `Unqualified OSGi version 1.0.0.qualifier must match unqualified Maven version 1.1.0-SNAPSHOT for SNAPSHOT builds` simply try to execute the build again. There seems to be a caching issue in Tycho that is responsible for that issue.
 
 - Copy the created repository _org.fipro.eclipse.tutorial.product/target/repository/_ to another directory (e.g. _C:/Development/tmp/repository_)  
   
