@@ -45,11 +45,30 @@ The basic recipe uses a static helper class to implement the functionality of in
 - Create a new plug-in project
     - _Main Menu → File → New → Plug-in Project_
     - Set name to _org.fipro.eclipse.tutorial.service.inverter_
+    - In the _Target Platform_ section select
+        - This plug-in is targeted to run with: __*an OSGi framework:*__
+        - Select __*standard*__ in the combobox
+        - Check __*Generate OSGi metadata automatically*__  
+        <img src="new_project_autogenerate.png" width="60%"/>
     - Click _Next_
+    - Set _Name_ to _Inverter Service_
     - Select _Execution Environment JavaSE-17_
     - Ensure that _Generate an Activator_ and _This plug-in will make contributions to the UI_ are disabled
     - Click _Finish_
-- Create an interface for the service definition
+    - If you do not see the tabs at the bottom of the recently opened editor with name _org.fipro.eclipse.tutorial.service.inverter_, close the editor and open the  _pde.bnd_ file in the project _org.fipro.eclipse.tutorial.service.inverter_.
+        - Switch to the _pde.bnd_ tab
+            - Add the `Bundle-ActivationPolicy` and the `Automatic-Module-Name` header to get the bundle automatically started
+            - Add the `-runee` instruction to create the requirement on Java 17
+            ```
+            Bundle-Name: Inverter Service
+            Bundle-SymbolicName: org.fipro.eclipse.tutorial.service.inverter
+            Bundle-Vendor: 
+            Bundle-Version: 1.0.0.qualifier
+            Bundle-ActivationPolicy: lazy
+            Automatic-Module-Name: org.fipro.eclipse.tutorial.service.inverter
+            -runee: JavaSE-17
+            ```
+  - Create an interface for the service definition
     - _Main Menu → File → New → Interface_
         - Source Folder: _org.fipro.eclipse.tutorial.service.inverter/src_
         - Package: _org.fipro.eclipse.tutorial.service.inverter_
@@ -63,6 +82,8 @@ The basic recipe uses a static helper class to implement the functionality of in
         String invert(String input);
     }
     ```
+    __*Hint:*__  
+    You can also copy the above snippet and paste it in Eclipse when having the `src` folder of the project selected in the _Project Explorer_. This will automatically create the package and the source file at the correct place. 
 - Create the service implementation
     - _Main Menu → File → New → Class_
         - Source Folder: _org.fipro.eclipse.tutorial.service.inverter/src_
@@ -87,12 +108,19 @@ The basic recipe uses a static helper class to implement the functionality of in
 	    }
     }
     ```
-- Configure the bundle via MANIFEST.MF
-    - Open the file _META-INF/MANIFEST.MF_ in the project _org.fipro.eclipse.tutorial.service.inverter_
-    - Switch to the _Runtime_ tab
-        - Add `org.fipro.eclipse.tutorial.service.inverter` to the list of _Exported Packages_
-- Open the _build.properties_ file in the project _org.fipro.eclipse.tutorial.service.inverter_
-    - Add the folder _OSGI-INF_ to the _Binary Build_
+- Create the _package-info.java_ file in the `org.fipro.eclipse.tutorial.service.inverter` package.
+    - _Right click on the package `org.fipro.eclipse.tutorial.service.inverter` → New → File_
+    - Set _File name_ to _package-info.java_
+    - Click _Finish_
+    - Copy the following code into the editor and save the file
+
+    ```java
+    @org.osgi.annotation.bundle.Export(substitution = org.osgi.annotation.bundle.Export.Substitution.NOIMPORT)
+    @org.osgi.annotation.versioning.Version("1.0.0")
+    package org.fipro.eclipse.tutorial.service.inverter;
+    ```
+
+    This configures that the package is exported. If this file is missing, the package is a `Private-Package` and therefore not usable by other OSGi bundles. The `substitution` parameter avoids that the package is used as import inside the same bundle.
 
 ## Step 2: Use the OSGi Declarative Service
 
@@ -130,14 +158,14 @@ We will now use the created `InverterService` in the `InverterPart`
                 public void keyPressed(KeyEvent e) {
                     if (e.keyCode == SWT.CR
                             || e.keyCode == SWT.KEYPAD_CR) {
-                        output.setText(StringInverter.invert(input.getText()));
+                        output.setText(inverter.invert(input.getText()));
                     }
                 }
             });
         }
     }
     ```
-    - Delete the `StringInverter` helper class
+    - Delete the `StringInverter` helper class. You can even delete the `org.fipro.eclipse.tutorial.inverter.helper` package
 - Update the feature
     - Open the file _feature.xml_ in the project _org.fipro.eclipse.tutorial.feature_
     - Switch to the _Included Plug-ins_ tab
@@ -207,6 +235,8 @@ In this step a log view is added to the application to show the log messages tha
 - Create a new plug-in project
     - _Main Menu → File → New → Plug-in Project_
     - Set name to _org.fipro.eclipse.tutorial.logview_
+    - In the _Target Platform_ section select
+        - This plug-in is targeted to run with: __*Eclipse*__
     - Click _Next_
     - Select _Execution Environment JavaSE-17_
     - Ensure that _Generate an Activator_ and _This plug-in will make contributions to the UI_ are disabled
@@ -339,9 +369,15 @@ You can also subscribe for events by registering an `org.osgi.service.event.Even
 
 The `IEventBroker` is not available in the OSGi context, which allows us, for example, to have multiple instances in one application. This also means that it cannot be referenced in an OSGi Declarative Service. But the `IEventBroker` acutually uses the OSGi `EventAdmin` service. Therefore it is possible to send events to the event bus from an OSGi Declarative Service by directly using the `EventAdmin`.
 
-- Open the file _META-INF/MANIFEST.MF_ in the project _org.fipro.eclipse.tutorial.service.inverter_
-    - Switch to the _Dependencies_ tab
-        - Add the package _org.osgi.service.event_ to the _Imported Packages_
+- Open the file _pde.bnd_ file in the project _org.fipro.eclipse.tutorial.service.inverter_  
+    - Switch to the _pde.bnd_ tab
+        - Add the `buildpath` instruction and add _org.osgi.service.event_ to add it as a project dependency
+          ```
+          -buildpath: \
+            org.osgi.service.event;version=latest
+          ```
+          __*Note:*__  
+          Do not use the _Dependencies_ tab to add dependencies. This will actually create the _Import-Package_ and _Require-Bundle_ headers that are added to the MANIFEST file, instead that the correct headers are generated!
     - Open the `InverterServiceImpl`
     - Add an instance field of type `EventAdmin`
     - Annotate the field with the `@org.osgi.service.component.annotations.Reference` annotation
