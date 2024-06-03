@@ -35,10 +35,10 @@
             
         	<unit 
         	   id="org.fipro.e4.service.preferences.feature.feature.group" 
-        	   version="0.4.0.202405151311"/>
+        	   version="0.5.0.202406031042"/>
         	
         	<repository 
-        	   location="https://github.com/fipro78/e4-preferences/raw/master/releases/0.4.0"/>
+        	   location="https://github.com/fipro78/e4-preferences/raw/master/releases/0.5.0"/>
     	</location>
 	</locations>
 </target>

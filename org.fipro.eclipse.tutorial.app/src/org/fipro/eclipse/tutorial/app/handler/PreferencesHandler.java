@@ -8,12 +8,11 @@ import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.fipro.e4.service.preferences.ContributedPreferenceNode;
-import org.fipro.e4.service.preferences.PrefMgr;
 
 public class PreferencesHandler {
 	
 	@Execute
-	public void execute(Shell shell, @PrefMgr PreferenceManager manager) {
+	public void execute(Shell shell, PreferenceManager manager) {
 
 		PreferenceDialog dialog = new PreferenceDialog(shell, manager) {
 			@Override

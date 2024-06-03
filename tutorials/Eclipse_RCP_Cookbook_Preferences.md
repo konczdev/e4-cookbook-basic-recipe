@@ -70,10 +70,10 @@ In a plain Eclipse 4 application, you don't want to use the _Compatibility Layer
                 
                 <unit 
                     id="org.fipro.e4.service.preferences.feature.feature.group" 
-                    version="0.4.0.202405151311"/>
-                
+                    version="0.5.0.202406031042"/>
+
                 <repository
-                    location="https://github.com/fipro78/e4-preferences/raw/master/releases/0.4.0"/>
+                    location="https://github.com/fipro78/e4-preferences/raw/master/releases/0.5.0"/>
             </location>
         </locations>
     </target>
@@ -83,7 +83,7 @@ In a plain Eclipse 4 application, you don't want to use the _Compatibility Layer
         - Select _Add..._
         - Select _Software Site_
         - Click _Next_
-        - Enter _https://github.com/fipro78/e4-preferences/raw/master/releases/0.4.0_ in _Work with:_
+        - Enter _https://github.com/fipro78/e4-preferences/raw/master/releases/0.5.0_ in _Work with:_
         - Select _E4 Preferences Service_
         - Click _Finish_
 - Switch to the _Definition_ tab
@@ -130,12 +130,11 @@ To provide the user an option to change preferences, a handler will be added to 
             import org.eclipse.swt.widgets.Composite;
             import org.eclipse.swt.widgets.Shell;
             import org.fipro.e4.service.preferences.ContributedPreferenceNode;
-            import org.fipro.e4.service.preferences.PrefMgr;
 
             public class PreferencesHandler {
 	
                 @Execute
-                public void execute(Shell shell, @PrefMgr PreferenceManager manager) {
+                public void execute(Shell shell, PreferenceManager manager) {
 
                     PreferenceDialog dialog = new PreferenceDialog(shell, manager) {
                         @Override
