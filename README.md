@@ -36,3 +36,11 @@ The updated version is contained in this repository in [Topping Recipe](/tutoria
 This is the _Decoration Recipe_, which means that we add the functionality that a user can change the behavior or the look&feel of an application by changing preferences. This is done by using Eclipse Preferences with a custom plugin that adapts a plain E4 preferences mechanism.
 
 The tutorial is contained in this repository in [Decoration Recipe](/tutorials/Eclipse_RCP_Cookbook_Preferences.md)
+
+## Recipe #6 - The Veggie Recipe (Add JavaFX controls to an SWT Eclipse 4 application)
+
+This is the _Veggie Recipe_, which means that we use an *alternative* UI technology with our Eclipse application. So it is like an alternative to meat (SWT). But instead of doing a full SWT to JavaFX migration, we integrate JavaFX controls to the SWT based Eclipse application.
+
+The original blog post can be found here: [Add JavaFX controls to a SWT Eclipse 4 application – Eclipse RCP Cookbook](https://www.codecentric.de/wissens-hub/blog/add-javafx-controls-swt-eclipse-4-application-eclipse-rcp-cookbook)  
+An updated was already published here: [Add JavaFX controls to a SWT Eclipse 4 application – Eclipse RCP Cookbook UPDATE](https://vogella.com/blog/add-javafx-controls-to-a-swt-eclipse-4-application-eclipse-rcp-cookbook-update/)  
+The most current updated version is contained in this repository in [Veggie Recipe](/tutorials/Eclipse_RCP_Cookbook_JavaFX.md)

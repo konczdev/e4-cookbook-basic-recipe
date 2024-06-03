@@ -8,7 +8,7 @@ This recipe will explain and show how to add a preference page to an Eclipse 4 a
 
 ## Ingredients
 
-This recipe is based on the [Eclipse RCP Cookbook – The Topping Recipe](Eclipse_RCP_Cookbook_p2.md). To get started fast with this recipe, the recipe is prepared for you on GitHub .
+This recipe is based on the [Eclipse RCP Cookbook – The Topping Recipe](Eclipse_RCP_Cookbook_p2.md). To get started fast with this recipe, the recipe is prepared for you on GitHub.
 
 To use the prepared recipe, import the project by cloning the Git repository:
 
@@ -31,7 +31,7 @@ In a plain Eclipse 4 application, you don't want to use the _Compatibility Layer
 
 - Open the target definition _org.fipro.eclipse.tutorial.target.target_ in the project _org.fipro.eclipse.tutorial.target_
 
-- Update the Software Site in the opened _Target Definition Editor_ 
+- Update the Software Sites in the opened _Target Definition Editor_ 
     - Alternative A
         - Switch to the _Source_ tab and add the following snippet to the editor  
     ```xml

@@ -9,6 +9,8 @@
    <launcherArgs>
       <programArgs>-clearPersistedState
       </programArgs>
+      <vmArgs>-Dosgi.framework.extensions=org.eclipse.fx.osgi
+      </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>
@@ -38,6 +40,11 @@
       <feature id="org.eclipse.ecf.filetransfer.feature" installMode="root"/>
       <feature id="org.eclipse.ecf.filetransfer.httpclientjava.feature" installMode="root"/>
       <feature id="org.fipro.e4.service.preferences.feature" installMode="root"/>
+      <feature id="org.eclipse.fx.runtime.min.feature" installMode="root"/>
+      <feature id="openjfx.media.feature" installMode="root"/>
+      <feature id="openjfx.standard.feature" installMode="root"/>
+      <feature id="openjfx.swt.feature" installMode="root"/>
+      <feature id="openjfx.web.feature" installMode="root"/>
    </features>
 
    <configurations>
